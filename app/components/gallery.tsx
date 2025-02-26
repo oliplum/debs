@@ -8,34 +8,34 @@ import ForwardIcon from '/public/forward-solid.svg';
 
 const images = [
     // green
-    '/green-1.jpg',
-    '/green-2.jpg',
-    '/green-3.jpg',
-    '/green-4.jpg',
+    '/pots/green-1.jpg',
+    '/pots/green-2.jpg',
+    '/pots/green-3.jpg',
+    '/pots/green-4.jpg',
     // blue
-    '/blue-1.jpg',
-    '/blue-2.jpg',
-    '/blue-3.jpg',
-    '/blue-4.jpg',
+    '/pots/blue-1.jpg',
+    '/pots/blue-2.jpg',
+    '/pots/blue-3.jpg',
+    '/pots/blue-4.jpg',
     // orange
-    '/orange-1.jpg',
-    '/orange-2.jpg',
-    '/orange-3.jpg',
+    '/pots/orange-1.jpg',
+    '/pots/orange-2.jpg',
+    '/pots/orange-3.jpg',
     // blue
-    '/blue2-1.jpg',
-    '/blue2-2.jpg',
-    '/blue2-3.jpg',
-    '/blue2-4.jpg',
+    '/pots/blue2-1.jpg',
+    '/pots/blue2-2.jpg',
+    '/pots/blue2-3.jpg',
+    '/pots/blue2-4.jpg',
      // white
-     '/white-1.jpg',
-     '/white-2.jpg',
-     '/white-3.jpg',
-     '/white-4.jpg',
+     '/pots/white-1.jpg',
+     '/pots/white-2.jpg',
+     '/pots/white-3.jpg',
+     '/pots/white-4.jpg',
      //making
-     '/making1.jpg',
-     '/making2.jpg',
-     '/making3.jpg',
-     '/making4.jpg',
+     '/pots/making1.jpg',
+     '/pots/making2.jpg',
+     '/pots/making3.jpg',
+     '/pots/making4.jpg',
 
     // Add all your image paths here
 ];
