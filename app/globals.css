@@ -47,7 +47,7 @@ body {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   background-color: rgb(0, 0, 0);
-  height: 250px;
+  height: 20vh;
   padding: 0px;
   display: flex;
   flex-direction: row;
