@@ -8,34 +8,34 @@ import ForwardIcon from '/public/forward-solid.svg';
 
 const images = [
     // green
-    '/green-1.JPG',
-    '/green-2.JPG',
-    '/green-3.JPG',
-    '/green-4.JPG',
+    '/public/green-1.JPG',
+    '/public/green-2.JPG',
+    '/public/green-3.JPG',
+    '/public/green-4.JPG',
     // blue
-    '/blue-1.JPG',
-    '/blue-2.JPG',
-    '/blue-3.JPG',
-    '/blue-4.JPG',
+    '/public/blue-1.JPG',
+    '/public/blue-2.JPG',
+    '/public/blue-3.JPG',
+    '/public/blue-4.JPG',
     // orange
-    '/orange-1.JPG',
-    '/orange-2.JPG',
-    '/orange-3.JPG',
+    '/public/orange-1.JPG',
+    '/public/orange-2.JPG',
+    '/public/orange-3.JPG',
     // blue
-    '/blue2-1.JPG',
-    '/blue2-2.JPG',
-    '/blue2-3.JPG',
-    '/blue2-4.JPG',
+    '/public/blue2-1.JPG',
+    '/public/blue2-2.JPG',
+    '/public/blue2-3.JPG',
+    '/public/blue2-4.JPG',
      // white
-     '/white-1.JPG',
-     '/white-2.JPG',
-     '/white-3.JPG',
-     '/white-4.JPG',
+     '/public/white-1.JPG',
+     '/public/white-2.JPG',
+     '/public/white-3.JPG',
+     '/public/white-4.JPG',
      //making
-     '/making1.JPG',
-     '/making2.JPG',
-     '/making3.JPG',
-     '/making4.JPG',
+     '/public/making1.JPG',
+     '/public/making2.JPG',
+     '/public/making3.JPG',
+     '/public/making4.JPG',
 
     // Add all your image paths here
 ];
