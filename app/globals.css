@@ -56,8 +56,16 @@ body {
   padding: 0px;
   display: flex;
   flex-direction: row;
-width: 100%;
+  width: 100%;
 }
+
+@media (max-width: 600px) {
+  .header {
+    height: 15vh;
+  }
+}
+
+
 
 .title {
   grid-column: 2/3;
