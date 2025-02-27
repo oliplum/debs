@@ -136,11 +136,15 @@ a:hover {
   transition: background-color 0.3s ease;
 }
 .main-area {
-  grid-row: 3 / 4;
+  /* grid-row: 3 / 4; */
   /* background-color: rgb(210, 34, 34); */
-  /* padding: 0.5rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 66vh;
+  overflow: hidden;
 }
 
 .potspics {
@@ -148,13 +152,12 @@ a:hover {
   display: flex;
   padding: 10px;
   justify-content: center;
-  height: 100%;
+  align-items: center;
+  /* max-width: 1000px; */
   width: 100%;
-  box-sizing: border-box; 
+  height: 100%;
+
 }
-
-
-
 
 
 
@@ -171,6 +174,7 @@ a:hover {
   font-size: 0.8rem;
   font-weight: lighter;
   height: 4vh;
+  overflow: hidden;
 }
 
 .fade {
