@@ -66,16 +66,18 @@ export default function Gallery() {
         setIsPaused(!isPaused);
     };
 
+ 
+
     return (
-        <div>
-            <div style={{ position: 'relative', width: '100%', height: '650px' }}>
+        <div >
+            <div className='potspics'>
                 {images.map((src, index) => (
                     <Image
                         key={index}
                         src={src}
                         alt={`Image ${index + 1}`}
-                       width={500}
-                       height={500}
+                        width={500}
+                        height={500}
                         style={{
                             transition: 'opacity 0.5s ease-in-out',
                             opacity: index === currentImageIndex ? 1 : 0,
@@ -96,6 +98,10 @@ export default function Gallery() {
                     <Image src={ForwardIcon} alt="Forward" width={30} height={30} />
                 </button>
             </div>
-        </div>
+
+            </div>
+
+
+
     );
 }
