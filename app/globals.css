@@ -14,7 +14,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary-bg-color: rgb(199, 199, 199);
-  --secondary-bg-color: yellow;
+  --secondary-bg-color: rgb(91, 91, 91);
   --header-bg-color: rgb(0, 0, 0);
   --title-bg-color: rgb(0, 0, 0);
   --title-image-bg-color: rgb(102, 44, 156);
@@ -129,7 +129,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   padding: 0;
-  color: white;
+  /* color: white; */
   max-height: 5vh;
   width: 100%;
   align-items: center;
@@ -138,11 +138,21 @@ a:hover {
 
 .nav-item {
   padding: 10px;
-  background-color: rgb(52, 52, 52);
+  background: linear-gradient(to bottom, var(--primary-bg-color), var(--secondary-bg-color) );
   font-size: 1rem;
   text-align: center;
   width: 100%;
   z-index: 2;
+  color: white;
+  }
+
+.button-text {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav-item:hover {
