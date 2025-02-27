@@ -68,7 +68,7 @@ export default function Gallery() {
 
     const handlePause = () => {
         setIsPaused(!isPaused);
-    };
+    }; 
 
  
 
