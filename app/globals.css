@@ -24,7 +24,7 @@
   --title-image-bg-color: rgb(102, 44, 156);
   --primary-text-color: white;
 --mid-grey: rgb(100, 100, 100);
---info-color: rgb(1, 147, 225);
+--info-color: rgb(158, 211, 239);
  
 }
 
@@ -124,7 +124,7 @@ h2 {
 }
 
 p {
-  color: white;
+  color: rgb(176, 55, 55);
   text-align: left;
 }
 
@@ -168,6 +168,10 @@ a:hover {
   width: 100%;
   z-index: 2;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button-text:hover {
+  color: var(--info-color);
 }
 
 .nav-item:hover {
