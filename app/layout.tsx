@@ -18,13 +18,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="background">
-          <div className='header'>
+          <div>
             <Header />
             </div>
-            <div className='nav'>
+            <div >
               <Nav />
               </div>
-              <div className='main-area '>
+              <div >
         {children}
         </div>
         <div className="footer"> 
