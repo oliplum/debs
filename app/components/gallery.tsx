@@ -71,7 +71,7 @@ export default function Gallery() {
  
 
     return (
-        <div className='main-area'>
+        <div >
             <div className='potspics' >
                 {images.map((src, index) => (
                     <div 
@@ -87,7 +87,6 @@ export default function Gallery() {
                             alt={`Image ${index + 1}`}
                             width={1500}
                             height={1500}
-                            // layout='responsive'
                         />
                     </div>
                 ))}

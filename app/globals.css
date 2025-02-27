@@ -154,11 +154,11 @@ a:hover {
   /* background-color: rgb(210, 34, 34); */
   display: flex;
   flex-direction: column;
-  justify-content: top;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 66vh;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .potspics {
@@ -167,6 +167,7 @@ a:hover {
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .potspics img {
