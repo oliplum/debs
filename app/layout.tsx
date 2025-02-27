@@ -24,11 +24,11 @@ export default function RootLayout({
             <div className='nav'>
               <Nav />
               </div>
-              <div className='main-area fade'>
+              <div className='main-area '>
         {children}
+        </div>
         <div className="footer"> 
           <Footer />
-        </div>
         </div>
         </div>
 
