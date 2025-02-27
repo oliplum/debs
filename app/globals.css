@@ -151,7 +151,7 @@ a:hover {
 .potspics {
   /* background-color: orange; */
   display: flex;
-  padding: 10px;
+  /* padding: 10px; */
   justify-content: center;
   align-items: center;
   /* max-width: 1000px; */
