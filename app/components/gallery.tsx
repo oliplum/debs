@@ -47,9 +47,17 @@ export default function Gallery() {
     useEffect(() => {
         if (isPaused) return;
 
-        const interval = setInterval(() => {
+        const resetInterval = () => {
+            clearInterval(interval);
+            interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+            }, 4000); // Change image every 4 seconds
+        };
+
+        let interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 3000); // Change image every 3 seconds
+
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -75,7 +83,7 @@ export default function Gallery() {
                     <div 
                         key={index}
                         style={{
-                            transition: 'opacity 0.5s ease-in-out',
+                            transition: 'opacity 1s ease-in-out',
                             opacity: index === currentImageIndex ? 1 : 0,
                             display: index === currentImageIndex ? 'block' : 'none',
                          }}
@@ -83,8 +91,8 @@ export default function Gallery() {
                         <Image
                             src={src}
                             alt={`Image ${index + 1}`}
-                            width={1000}
-                            height={600}
+                            width={1500}
+                            height={1500}
                             layout='responsive'
                         />
                     </div>
