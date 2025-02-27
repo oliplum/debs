@@ -47,14 +47,8 @@ export default function Gallery() {
     useEffect(() => {
         if (isPaused) return;
 
-        const resetInterval = () => {
-            clearInterval(interval);
-            interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }, 4000); // Change image every 4 seconds
-        };
 
-        let interval = setInterval(() => {
+        const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 3000); // Change image every 3 seconds
 
