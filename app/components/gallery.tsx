@@ -24,10 +24,10 @@ const images = [
     '/pots/orange4.jpg',
     '/pots/orange5.jpg',
     // blue
-    '/pots/blue-white-1.jpg',
-    '/pots/blue-white-2.jpg',
-    '/pots/blue-white-3.jpg',
-    '/pots/blue-white-4.jpg',
+    '/pots/blue-white1.jpg',
+    '/pots/blue-white2.jpg',
+    '/pots/blue-white3.jpg',
+    '/pots/blue-white4.jpg',
      // white
      '/pots/white1.jpg',
      '/pots/white2.jpg',
