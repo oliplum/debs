@@ -3,7 +3,7 @@ export default function Header() {
     return (
         <div className="header">
             <div className="title">
-                <h1>Deborah Tsarvousis</h1>
+                <h1>Deborah Tsavousis</h1>
                 <h2>Coil Ceramics</h2>
                 </div>
             <div className='title-image'>
