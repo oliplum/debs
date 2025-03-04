@@ -199,6 +199,13 @@ a:hover {
   color: white;
 }
 
+.nav-item:hover {
+  background-color: var(--info-color);
+  cursor: pointer;
+  transition:  0.3s ease;
+}
+
+
 .button-text {
   color: white;
   font-size: 1.1rem;
@@ -210,13 +217,9 @@ a:hover {
 
 .button-text:hover {
   color: var(--info-color);
+  transition:  0.3s ease-in-out;
 }
 
-.nav-item:hover {
-  background-color: rgb(68, 68, 68);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
 .main-area {
   /* grid-row: 3 / 4; */
