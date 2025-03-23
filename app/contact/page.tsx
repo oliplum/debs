@@ -10,7 +10,7 @@ export default function Contact() {
 <div className="contact-container">
 
             <div className='leftside'>
-                <p>Deborah Tsarvousis is a ceramic artist working out of Sheffield, Canterbury, New Zealand</p>
+                <p>Deborah Tsavousis is a ceramic artist working out of Sheffield, Canterbury, New Zealand</p>
             <Image
                 src="/debs.jpg"
                 alt="Deborah Tsavousis"
