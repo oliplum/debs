@@ -13,7 +13,7 @@ export default function Contact() {
                 <p>Deborah Tsarvousis is a ceramic artist working out of Sheffield, Canterbury, New Zealand</p>
             <Image
                 src="/debs.jpg"
-                alt="Deborah Tsarvousis"
+                alt="Deborah Tsavousis"
                 width={200}
                 height={200}
                 objectFit="contain">
