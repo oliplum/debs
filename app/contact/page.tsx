@@ -23,7 +23,7 @@ export default function Contact() {
 
             <div className='rightside'>
                 <p>To contact Deborah: 
-                    email: <a href="mailto:debs@ceramic1.com">debs@ceramic1.com</a>
+                    email: <a href="mailto:deb@ceramic1.com">debs@ceramic1.com</a>
                 </p>
                 </div>
                   
