@@ -6,7 +6,7 @@ export default function Nav() {
 <Link href="/" className='nav-item'>
   <div className="button-text" >Home</div>
 </Link>
-<Link href="http://oligaff.etsy.com" target="_blank" rel="noopener noreferrer" className='nav-item'>
+<Link href="https://deborahceramics.etsy.com" target="_blank" rel="noopener noreferrer" className='nav-item'>
 <div className="button-text"> Shop </div>
 </Link>
 <Link href="/contact" className='nav-item'>
