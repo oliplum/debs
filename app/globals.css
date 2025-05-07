@@ -250,7 +250,6 @@ a:hover {
   object-fit: cover;
   object-position: center;
   animation: fadeInOut 3s ease-in-out infinite;
-
 }
 
 @keyframes fadeInOut {
