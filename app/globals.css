@@ -246,6 +246,24 @@ a:hover {
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  .potspics {
+    max-width: 1200px;
+  }
+  .potspics img {
+    max-height: 800px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .potspics {
+    max-width: 1400px;
+  }
+  .potspics img {
+    max-height: 900px;
+  }
+}
+
 .potspics img {
   max-width: 100%;
   max-height: 600px;
