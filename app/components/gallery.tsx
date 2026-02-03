@@ -1,87 +1,44 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import BackIcon from '/public/backward-solid.svg';
-import PauseIcon from '/public/circle-pause-solid.svg';
-import PlayIcon from '/public/circle-play-solid.svg';
-import ForwardIcon from '/public/forward-solid.svg';
-
-const images = [
-    // green
-    '/pots/green1.jpg',
-    '/pots/green2.jpg',
-    '/pots/green3.jpg',
-    '/pots/green4.jpg',
-    // blue
-    '/pots/blue1.jpg',
-    '/pots/blue2.jpg',
-    '/pots/blue3.jpg',
-    '/pots/blue4.jpg',
-    // orange
-    '/pots/orange1.jpg',
-    '/pots/orange2.jpg',
-    '/pots/orange3.jpg',
-    '/pots/orange4.jpg',
-    '/pots/orange5.jpg',
-    // blue
-    '/pots/blue-white1.jpg',
-    '/pots/blue-white2.jpg',
-    '/pots/blue-white3.jpg',
-    '/pots/blue-white4.jpg',
-    // white
-    '/pots/white1.jpg',
-    '/pots/white2.jpg',
-    '/pots/white3.jpg',
-    '/pots/white4.jpg',
-    // making
-    '/pots/making1.jpg',
-    '/pots/making2.jpg',
-    '/pots/making3.jpg',
-    '/pots/making4.jpg',
-];
+import BackIcon from '../../public/backward-solid.svg';
+import PauseIcon from '../../public/circle-pause-solid.svg';
+import PlayIcon from '../../public/circle-play-solid.svg';
+import ForwardIcon from '../../public/forward-solid.svg';
+import { images } from './images';
 
 export default function Gallery() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const [isAnimating, setIsAnimating] = useState(false);
-    const [fadeOut, setFadeOut] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
-        if (isPaused) return;
+        if (isPaused) {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+                intervalRef.current = null;
+            }
+            return;
+        }
 
-        const timeout = setTimeout(() => {
-            setFadeOut(true);
-            const fadeTimeout = setTimeout(() => {
-                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-                setFadeOut(false);
-            }, 300); // Match this duration to the CSS fade-out transition time
-            
-            return () => clearTimeout(fadeTimeout);
-        }, 2700); // Adjust timing to maintain synchronization
+        // Auto-advance images when not paused
+        intervalRef.current = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 3000);
 
-        return () => clearTimeout(timeout);
-    }, [isPaused, currentImageIndex]);
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, [isPaused]);
 
     const handleNext = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setFadeOut(true);
-        setTimeout(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-            setFadeOut(false);
-            setIsAnimating(false);
-        }, 300); // Match this duration to the CSS fade-out transition time
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
     const handlePrev = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setFadeOut(true);
-        setTimeout(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-            setFadeOut(false);
-            setIsAnimating(false);
-        }, 300); // Match this duration to the CSS fade-out transition time
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
     const handlePause = () => {
@@ -95,9 +52,16 @@ export default function Gallery() {
                     <div
                         key={index}
                         style={{
-                            opacity: index === currentImageIndex && !fadeOut ? 1 : 0,
-                            display: index === currentImageIndex || fadeOut ? 'block' : 'none',
-                            transition: 'opacity 300ms ease-in-out', // Match this to the fade-out duration
+                            opacity: index === currentImageIndex ? 1 : 0,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            position: index === 0 ? 'relative' : 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            transition: isPaused ? 'none' : 'opacity 400ms ease-in-out',
                         }}
                     >
                         <Image
@@ -105,24 +69,20 @@ export default function Gallery() {
                             alt={`Image ${index + 1}`}
                             width={1500}
                             height={1500}
-                            priority={index === 0} // Preload the first image
+                            priority={index === 0}
+                            style={{
+                                maxWidth: '100%',
+                                maxHeight: '600px',
+                                width: 'auto',
+                                height: 'auto',
+                                objectFit: 'contain',
+                            }}
                         />
                     </div>
                 ))}
-                {/* Preload all images */}
-                {images.map((src, index) => (
-                    <Image
-                        key={`preload-${index}`}
-                        src={src}
-                        alt={`Preload Image ${index + 1}`}
-                        width={1}
-                        height={1}
-                        style={{ display: 'none' }} // Hidden preload
-                    />
-                ))}
             </div>
             <div className="arrow-container">
-                <button className="arrow-item" onClick={handlePrev} disabled={isAnimating}>
+                <button className="arrow-item" onClick={handlePrev}>
                     <Image src={BackIcon} alt="Back" width={30} height={30} />
                 </button>
                 <button className="arrow-item" onClick={handlePause}>
@@ -133,7 +93,7 @@ export default function Gallery() {
                         height={30}
                     />
                 </button>
-                <button className="arrow-item" onClick={handleNext} disabled={isAnimating}>
+                <button className="arrow-item" onClick={handleNext}>
                     <Image src={ForwardIcon} alt="Forward" width={30} height={30} />
                 </button>
             </div>
