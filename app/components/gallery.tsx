@@ -51,12 +51,12 @@ export default function Gallery() {
 
         const timeout = setTimeout(() => {
             setFadeOut(true);
-            setTimeout(() => {
-                if (!isPaused) { // Ensure animation stops if paused
-                    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-                    setFadeOut(false);
-                }
+            const fadeTimeout = setTimeout(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+                setFadeOut(false);
             }, 300); // Match this duration to the CSS fade-out transition time
+            
+            return () => clearTimeout(fadeTimeout);
         }, 2700); // Adjust timing to maintain synchronization
 
         return () => clearTimeout(timeout);
